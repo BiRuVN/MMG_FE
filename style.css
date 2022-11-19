@@ -1,0 +1,68 @@
+#neubar {
+background: #ffffff;
+/* box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.4) */
+}
+#neubar .dropdown-menu a:hover {
+color: #000000;
+}
+#neubar .nav-item {
+margin : auto 4px;
+}
+#neubar a {
+padding-left:30px;
+padding-right:30px;
+font-size: 17px;
+color: black;
+}
+#neubar .dropdown-menu {
+background : #ffffff
+}
+a.navbar-brand {
+color: #b2b2b2;
+}
+
+.voucher-title{
+    font-size: x-large;
+    color: red;
+    font-weight: 800;
+    /* font-family: */
+}
+.voucher-info{
+    font-size: medium;
+    color: rgb(6, 225, 6);
+    font-weight: 800;
+    /* font-family:Arial, Helvetica, sans-serif; */
+}
+#wrap {
+    width: 90%;
+    margin: auto;
+    background: rgb(220, 37, 37);
+    overflow: hidden;
+    border: 3px solid black;
+    
+}
+.i-b {
+    border: 1px solid #039fb7;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: rgb(3, 159, 183);
+    border-right-color: rgb(3, 159, 183);
+    border-bottom-color: rgb(3, 159, 183);
+    border-left-color: rgb(3, 159, 183);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
