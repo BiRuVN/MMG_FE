@@ -1,3 +1,8 @@
+"use strict";
+setTimeout(function () {
+    document.getElementById("myloader").style.visibility = 'hidden';
+}, 2000);
+
 function call_api(is_onload=true) {
     let url = "https://mgg-be.onrender.com/api/v1/get_voucher?type_=Shopee";
     if (!is_onload){
@@ -76,7 +81,7 @@ function call_api(is_onload=true) {
                     break;
             }
             if (values.discount_code != "") {
-                btn = `<div id="copy-code" class="btn btn-primary justify-content-center" style="display:block;font-size:large;" onclick="mycopy('${values.discount_code}')">
+                btn = `<div id="copy-code" class="btn btn-primary justify-content-center " style="display:block;font-size:large;" onclick="{mycopy('${values.discount_code}');this.innerHTML='${values.discount_code}';this.style.background='rgb(0,188,0)';}">
                             <i class="far fa-copy me-2"></i>
                             COPY MÃ
                         </div>`
@@ -116,3 +121,5 @@ function mycopy(text) {
      // Copy the text inside the text field
     navigator.clipboard.writeText(text);
 }
+
+
