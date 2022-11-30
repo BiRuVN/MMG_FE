@@ -41,47 +41,57 @@ function call_api(is_onload=true) {
         console.log(objectData['data']);
         let tableData = "";
         let img_url = "";
+        let aff_url = "";
         let btn = `<a href="#" class="btn btn-primary justify-content-center mt-2" style="display:block;font-size:large;">NHẬN ƯU ĐÃI</a>`;
         objectData['data'].map((values) => {
             switch (values.type){
                 case "Tiki":
                     img_url = "./img/ma-giam-gia-tiki.webp";
+                    aff_url = "https://tinyurl.com/2zgghzsl"
                     btn = `<a href="https://tinyurl.com/2zgghzsl" class="btn btn-primary justify-content-center mt-2" style="display:block;font-size:large;">NHẬN ƯU ĐÃI</a>`;
                     break;
                 case "Shopee":
                     img_url = "./img/shopee-logo-40482.png";
+                    aff_url = "https://tinyurl.com/2qdfvzla"
                     btn = `<a href="https://tinyurl.com/2qdfvzla" class="btn btn-primary justify-content-center mt-2" style="display:block;font-size:large;">NHẬN ƯU ĐÃI</a>`;
                     break;
                 case "Lazada":
                     img_url = "./img/ma-giam-gia-lazada.webp";
+                    aff_url = "https://shorten.asia/XTUESTQU"
                     btn = `<a href="https://shorten.asia/XTUESTQU" class="btn btn-primary justify-content-center mt-2" style="display:block;font-size:large;">NHẬN ƯU ĐÃI</a>`;
                     break;
                 case "Grab":
                     img_url = "./img/grab-logo.webp";
+                    aff_url = "https://www.grab.com/vn/"
                     btn = `<a href="https://www.grab.com/vn/" class="btn btn-primary justify-content-center mt-2" style="display:block;font-size:large;">NHẬN ƯU ĐÃI</a>`;
                     break;
                 case "Now":
                     img_url = "./img/logo-shopeefood.webp";
+                    aff_url = "https://tinyurl.com/2kkpxove"
                     btn = `<a href="https://tinyurl.com/2kkpxove" class="btn btn-primary justify-content-center mt-2" style="display:block;font-size:large;">NHẬN ƯU ĐÃI</a>`;
                     break;
                 case "Nguyen-Kim":
                     img_url = "./img/ma-giam-gia-nguyen-kim.webp";
+                    aff_url = "https://shorten.asia/efjkt4cu"
                     btn = `<a href="https://shorten.asia/efjkt4cu" class="btn btn-primary justify-content-center mt-2" style="display:block;font-size:large;">NHẬN ƯU ĐÃI</a>`;
                     break;
                 case "Sendo":
                     img_url = "./img/ma-giam-gia-sendo.webp";
+                    aff_url = "https://www.sendo.vn/"
                     btn = `<a href="https://www.sendo.vn/" class="btn btn-primary justify-content-center mt-2" style="display:block;font-size:large;">NHẬN ƯU ĐÃI</a>`;
                     break;
                 case "Fahasha":
                     img_url = "./img/logo-fahasa.webp";
+                    aff_url = "https://shorten.asia/K1dRCn9C"
                     btn = `<a href="https://shorten.asia/K1dRCn9C" class="btn btn-primary justify-content-center mt-2" style="display:block;font-size:large;">NHẬN ƯU ĐÃI</a>`;
                     break;
                 default:
                     img_url = "./img/black_default.png";
+                    aff_url = "https://tinyurl.com/2zgghzsl"
                     break;
             }
             if (values.discount_code != "") {
-                btn = `<div id="copy-code" class="btn btn-primary justify-content-center " style="display:block;font-size:large;" onclick="{mycopy('${values.discount_code}');this.innerHTML='${values.discount_code}';this.style.background='rgb(0,188,0)';}">
+                btn = `<div id="copy-code" class="btn btn-primary justify-content-center" style="display:block;font-size:large;" onclick="{mycopy('${values.discount_code}');this.innerHTML='${values.discount_code}';this.style.background='rgb(0,188,0)';setTimeout(() => {window.open('${aff_url}', '_blank')}, 1000);}">
                             <i class="far fa-copy me-2"></i>
                             COPY MÃ
                         </div>`
@@ -94,11 +104,11 @@ function call_api(is_onload=true) {
                         <div class="row">
                             <span class="d-inline-block">
                                 <img class="position-relative float-end i-b" width="80" src="${img_url}" alt="shopee circle logo"></img>
-                                <b class="voucher-title ">${values.discount}</b>
-                            </span>
-                            <div style="height:180px; overflow:auto">
+                                <b class="voucher-title ">${values.discount}</b><br>
                                 <span class="d-inline-block"><b class="voucher-info">Giảm tối đa:</b> ${values.max_discount}</span><br>
-                                <span class="d-inline-block"><b class="voucher-info">ĐH tối thiểu:</b> ${values.min_purchase}</span><br>
+                                <span class="d-inline-block"><b class="voucher-info">ĐH tối thiểu:</b> ${values.min_purchase}</span>
+                            </span>
+                            <div style="height:105px; overflow:auto">
                                 <span class="d-inline-block"><b class="voucher-info">Hiệu lực lúc:</b> ${values.start_at}</span><br>
                                 <span class="d-inline-block"><b class="voucher-info">Ngày hết hạn:</b> ${values.end_at}</span><br>
                                 <span class="d-inline-block"><b class="voucher-info">Ngành hàng:</b> ${values.category}</span>
@@ -121,5 +131,3 @@ function mycopy(text) {
      // Copy the text inside the text field
     navigator.clipboard.writeText(text);
 }
-
-
