@@ -4,7 +4,7 @@ setTimeout(function () {
 }, 2000);
 
 function call_api(is_onload=true) {
-    let url = "https://mgg-be.onrender.com/api/v1/get_voucher?type_=Shopee";
+    let url = "https://mgg-be.onrender.com/api/v1/get_voucher?type_=Tiki";
     if (!is_onload){
         switch (document.getElementById("select_id").value){
             case "1":
